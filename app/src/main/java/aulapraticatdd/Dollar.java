@@ -1,15 +1,18 @@
 package aulapraticatdd;
 
 class Dollar extends Money {
- int amount;
 
-    Dollar(int amount) {
-        this.amount= amount;
+    Dollar(int amount, String currency)  {
+        super(amount, currency);
+     }
+    
+    String currency() {
+       return currency;
     }
 
     Money times(int multiplier)  {
-        return new Dollar(amount * multiplier);
-     }
+      return Money.dollar(amount * multiplier);
+   }	
 
     public boolean equals(Object object)  {
         Dollar dollar = (Dollar) object;
